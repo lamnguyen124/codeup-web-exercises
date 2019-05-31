@@ -19,7 +19,7 @@
     <br>
     <br>
     <form method="POST" action="https://request-inspector.glitch.me/">
-        <textarea name="bio" placeholder="Describe yourself"></textarea>
+        <textarea name="bio" id="bio" placeholder="Describe yourself"></textarea>
         <br>
         <input type="submit">
     </form>
@@ -27,10 +27,10 @@
     <form method="POST" action="https://request-inspector.glitch.me/">
         <b>Where did you hear about us?</b>
         <br>
-Billboard<input type="checkbox" name="seen_where" value="billboard"><br>
-Radio Advertisement <input type="checkbox" name="seen_where" value="radio"><br>
-Internet Advertisement <input type="checkbox" name="seen_where" value="internet"><br>
-Other<input type="checkbox" name="seen_where" value="Other">
+            Billboard<input type="checkbox" name="seen_where" id="billboard" value="billboard"><br>
+            Radio Advertisement <input type="checkbox" name="seen_where" id="radio" value="radio"><br>
+            Internet Advertisement <input type="checkbox" name="seen_where" id="internet" value="internet"><br>
+            Other<input type="checkbox" name="seen_where" id="other" value="other">
 <br>
         <b>Which browser are you using?</b></b><br>
         <select name="which_browser">
