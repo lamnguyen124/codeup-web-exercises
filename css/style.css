@@ -2,3 +2,51 @@
     color: purple; /* single line comment */
     text-decoration: underline;
 }
+
+#main-header {
+    text-align: center;
+}
+h3 {
+    background-color: silver;
+    text-decoration: underline;
+}
+body {
+    background-image: url("../img/abstract.jpg");
+    background-color: #00bfff;
+    font-family: tahoma;
+    color: white;
+}
+ul {
+    list-style: square;
+}
+table {
+    font-size: 16px;
+    padding: 2px;
+}
+td {
+    font-size: 14px;
+    padding: 1px
+}
+tr {
+    fontsize: 13px;
+    padding: 1px;
+}
+
+a:link {
+    color:salmon;
+}
+
+
+a:visited {
+    color:black;
+}
+
+
+a:hover {
+    color:white;
+}
+
+
+a:active {
+    color:red;
+}
