@@ -1,3 +1,4 @@
-h1.fancy-header {
-    color: purple;
+.fancy-header {
+    color: purple; /* single line comment */
+    text-decoration: underline;
 }
