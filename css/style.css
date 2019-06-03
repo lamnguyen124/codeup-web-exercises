@@ -12,8 +12,11 @@ h3 {
 }
 body {
     background-image: url("../img/abstract.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
     background-color: #00bfff;
-    font-family: tahoma;
+    font-family: "tahoma", serif;
     color: white;
 }
 ul {

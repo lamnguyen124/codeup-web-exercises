@@ -1,0 +1,52 @@
+div>button {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: 1px;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px gold;
+}
+button:hover {
+    background-color: lightcoral
+}
+
+button:active {
+    background-color: #black;
+    box-shadow: 0 5px blue;
+    transform: translateY(4px);
+}
+.primary {
+    background-color: blue;
+}
+.secondary {
+    background-color: pink;
+}
+.success {
+    background-color: green;
+}
+.danger {
+    background-color: red;
+}
+.warning {
+    background-color: orange;
+}
+.info {
+    background-color: aqua;
+}
+.light {
+    background-color: silver;
+}
+.dark {
+    background-color: darkblue;
+}
+.link {
+    background-color: purple;
+}
+#btn secondary active {
+    color: gold;
+}
+
