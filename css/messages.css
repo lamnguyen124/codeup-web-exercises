@@ -12,23 +12,23 @@ body, html {
 }
 
 .message-info {
-    color: purple;
-    background-color: lightblue;
+    color: #5955AB;
+    background-color: #CCDEFF;
     padding: 12px;
 }
 .message-success {
-    color: green;
-    background-color: lightgreen;
+    color: #388859;
+    background-color: #CFf3DA;
     padding: 12px;
 }
 .message-warning {
-    color: orange;
-    background-color: lightyellow;
+    color: #978424;
+    background-color: #fcfbc9;
     padding: 12px;
 }
 .message-error {
-    color: red;
-    background-color: pink;
+    color: #994065;
+    background-color: #F6D0D4;
     padding: 12px;
 
 }

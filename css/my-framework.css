@@ -10,40 +10,41 @@ div>button {
     border-radius: 15px;
     box-shadow: 0 9px gold;
 }
+}
 button:hover {
     background-color: lightcoral
 }
 
-button:active {
+.btn:active {
     background-color: #black;
     box-shadow: 0 5px blue;
     transform: translateY(4px);
 }
-.primary {
+.btn-outline-primary {
     background-color: blue;
 }
-.secondary {
+.btn-outline-secondary {
     background-color: pink;
 }
-.success {
+.btn-outline-success {
     background-color: green;
 }
-.danger {
+.btn-outline-danger {
     background-color: red;
 }
-.warning {
+.btn-outline-warning {
     background-color: orange;
 }
-.info {
+.btn-outline-info {
     background-color: aqua;
 }
-.light {
+.btn-outline-light {
     background-color: silver;
 }
-.dark {
+.btn-outline-dark {
     background-color: darkblue;
 }
-.link {
+.btn-outline-link {
     background-color: purple;
 }
 #btn secondary active {
