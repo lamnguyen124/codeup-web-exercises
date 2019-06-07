@@ -1,0 +1,100 @@
+.jumbotron {
+    background-image: url("https://java.codeup.com/examples/bootstrap/pizza.png");
+    background-size: cover;
+}
+h1.display-4 {
+    text-align: center;
+    font-size: 425%;
+}
+.d-sm-none .d-md-block
+.badge-primary {
+    background: black;
+}
+.choose {
+    background: #d8eef7;
+    color: #4a839f;
+}
+form {
+    border: black solid 1px;
+    padding: 1px;
+}
+.next-step{
+    background: #327ab7;
+    color: white;
+}
+.form-check-label{
+    background: #d8eef7;
+    color: #4a839f;
+}
+input{
+    background: #d8eef7;
+    color: #4a839f;
+}
+div.container {
+    background: white;
+    width: 100%;
+    opacity: .5;
+    padding: 0px;
+}
+.next-step {
+    float: right;
+}
+footer{
+    background: lightgray;
+}
+button{
+    color: white;
+}
+h5.card-title {
+    background: lightgray;
+    color: #4a839f;
+}
+div.form-check {
+    background: #d8eef7;
+    color: #4a839f;
+}
+img.cart {
+    width: 15%;
+    height: 15%;
+}
+div.card-body{
+    background: #d8eef7;
+    color: #4a839f;
+}
+div.card {
+    background: #d8eef7;
+    color: #4a839f;
+}
+div.input-group-text {
+    background: white;
+    border: white;
+}
+p.card-text {
+    background: white;
+    height: 40px;
+    margin: auto;
+    padding: 10px;
+}
+button.btn-outline-success {
+    color: grey;
+    border: grey;
+}
+button.btn {
+    color:grey;
+    border:grey;
+}
+form.form-inline {
+    border: darkgrey;
+}
+div.mb-3{
+    background: white;
+}
+div.input-group{
+    background: white;
+}
+footer.lastbtn{
+    background: lightgrey;
+}
+div.jumbotron-fluid{
+
+}

@@ -18,23 +18,21 @@
 .column {
     float: left;
     padding: 10px;
-    /*border: 1px solid black;*/
     box-sizing: inherit;
 }
 .row .one {
-    /*background-color: red;*/
     width: 100%;
 }
 .row .one-half {
-    /*background-color: orange;*/
+
     width: 50%;
 }
 .row .one-third {
-    background-color: yellow;
+    background-color: blue;
     width: calc(100% / 3);
 }
 .row .one-fourth {
-    background-color: green;
+    background-color: red;
     width: 25%;
 }
 .row .one-sixth {
@@ -42,7 +40,7 @@
     width: calc(100% / 6);
 }
 .row .one-eighth {
-    background-color: blue;
+    background-color: pink;
     width: calc(100% / 8);
 }
 
@@ -55,9 +53,6 @@
         width: 100%;
     }
 
-    /*.row .one-half {*/
-    /*width: 100%;*/
-    /*}*/
     .row .one-third {
         width: 100%;
     }
