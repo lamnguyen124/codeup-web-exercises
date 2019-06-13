@@ -25,15 +25,16 @@ var googleTotal = google * googleHour;
 var payment = facebookTotal + amazonTotal + googleTotal;
 alert("So the total that you're getting paid is "+ payment);
 
-var full= confirm("Is there space available in class?");
-var schedule= confirm("Is the schedule not conflicting?");
-var possible= full && schedule;
-alert("Student can enroll: " + possible);
+var classtime= prompt ("What is the class time?");
+var noScheduleCon = !confirm("Does student already have a class at " + classtime + "?");
+
+var maxClassSize = prompt("what's the maximum class size?");
+var studentsEnrolled = prompt( "how many students are currently enrolled?");
+alert("Student can enroll in class: " + (noScheduleCon && (studentsEnrolled < maxClassSize)));
 
 var member = confirm( "are you a premium member?");
 var buyMuch = confirm( "Did you buy more than 2 items?");
 var when = confirm( "is the offer expired?");
 var yesOrNo= buyMuch && when || member;
-alert("Customer can use coupon: " + yesOrNo);
-
+alert("Customer can use coupon: " + (when && (member || buyMuch >= 2)));
 
