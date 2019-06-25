@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Where To Eat in Austin!</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 90%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Eat Me!</h1>
+<p id="eat"></p>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src='js/keys.js'></script>
+<!-- Custom JS -->
+<script>
+    mapboxgl.accessToken = mapboxToken;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 20,
+        center: [-97.7352547, 30.354753]
+    });
+map.setZoom(12);
+
+    map.on('load', function () {
+// Add a layer showing the places.
+        map.addLayer({
+            "id": "places",
+            "type": "symbol",
+            "source": {
+                "type": "geojson",
+                "data": {
+                    "type": "FeatureCollection",
+                    "features": [{
+                        "type": "Feature",
+                        "properties": {
+                            "description": "<strong>Jinya Ramen</strong><p>Ramen!<br><a href='http://jinya-ramenbar.com'>www.jinya-ramenbar.com</a><br><img src='img/jinya.jpg' alt='jinya' height='100px' width='100px'></p>",
+                            "icon": "restaurant"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [-97.724270, 30.400140]
+                        }
+                    }, {
+                        "type": "Feature",
+                        "properties": {
+                            "description": "<strong>Haru Ramen & Yakitori</strong><p>Ramen!<br><a href='http://www.hanabiaustin.com'>www.hanabiaustin.com</a><br><img src='img/haru.jpg' alt='haru' height='100px' width='100px'></p>",
+                            "icon": "restaurant"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [-97.7352547, 30.354753]
+                        }
+                    }, {
+                        "type": "Feature",
+                        "properties": {
+                            "description": "<strong>Chosun Galbi</strong><p>Korean<br><a href='http://www.chosungalbiaustin.com/'>www.chosungalbiaustin.com/</a><br><img src='img/chosun.jpg' alt='chosun' height='100px' width='100px'></p>",
+                            "icon": "restaurant"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [-97.7087418, 30.3299059]
+                        }
+                    }]
+                }
+            },
+            "layout": {
+                "icon-image": "{icon}-15",
+                "icon-allow-overlap": true
+            }
+        });
+
+// When a click event occurs on a feature in the places layer, open a popup at the
+// location of the feature, with description HTML from its properties.
+        map.on('click', 'places', function (e) {
+            var coordinates = e.features[0].geometry.coordinates.slice();
+            var description = e.features[0].properties.description;
+
+// Ensure that if the map is zoomed out such that multiple
+// copies of the feature are visible, the popup appears
+// over the copy being pointed to.
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+
+            new mapboxgl.Popup()
+                .setLngLat(coordinates)
+                .setHTML(description)
+                .addTo(map);
+        });
+
+// Change the cursor to a pointer when the mouse is over the places layer.
+        map.on('mouseenter', 'places', function () {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+// Change it back to a pointer when it leaves.
+        map.on('mouseleave', 'places', function () {
+            map.getCanvas().style.cursor = '';
+        });
+        var restaurants = ["Jinya Ramen - 4.5★ ", "Haru Ramen & Yakitori - 4★", "Chosun Galbi - 4.5★"];
+        restaurants.forEach(myFunction);
+
+        function myFunction(item) {
+            document.getElementById("eat").innerHTML += item + "<br>";
+        }
+        map.addControl(new mapboxgl.NavigationControl());
+    });
+</script>
+</body>
+</html>
