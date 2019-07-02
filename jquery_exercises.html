@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="header">Hello</h1>
+<p class="codeup">Hi</p>
+<div>
+    <ul id="lists">
+        <li class="codeup">Well</li>
+        <li class="codeup">Hello</li>
+        <li class="codeup">There</li>
+    </ul>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/jquery-2.2.4.js"></script>
+  <script>
+      $('li').css('font-size', '20px');
+      $('li, h1, p').css('background-color', 'grey');
+  var contents = $('h1').html();
+  alert(contents);
+  </script>
+
+</body>
+</html>
