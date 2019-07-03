@@ -3,62 +3,186 @@
 <head>
     <title>Konami Code</title>
 </head>
+<style>
+    .ryuimg{
+        display:none;
+    }
+    .chunimg{
+        display:none;
+    }
+</style>
 <body>
 <h1>Konami Code</h1>
+<table>
+    <tr>
+        <td>
+<div class="ryuimg">
+    <img src="img/ryu.gif" alt="display image on button click" class="img-responsive img-thumbnail"/>
+</div>
+        </td>
+        <td>
+<div class="chunimg">
+    <img src="img/chun.gif" alt="display image on button click" class="img-responsive img-thumbnail"/>
+</div>
+        </td>
+</table>
+<audio class="hadouken">
+    <source src="sound/hadouken.mp3" type="audio/mpeg">
+</audio>
+<audio class="chun">
+    <source src="sound/chun.mp3" type="audio/mpeg">
+</audio>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-    "use strict";
-
-    $(document).keyup(function(event){
-        console.log(event.keyCode);
-    });
-
-
-    // var global = {
-    //
-    //     konami: function() {
-    //         var konamikeys = [38,38,40,40,37,39,37,39,66,65],
-    //             started = false,
-    //             count = 0;
-    //
-    //         $(document).keydown(function(e){
-    //             var reset = function() {
-    //                 started = false;
-    //                 count = 0;
-    //                 return;
-    //             };
-    //
-    //             key = e.keyCode;
-    //
-    //             // Begin watching if first key in sequence was pressed.
-    //             if(!started){
-    //                 if(key == 38){
-    //                     started = true;
-    //                 }
-    //             }
-    //
-    //             // If we've started, pay attention to key presses, looking for right sequence.
-    //             if (started){
-    //
-    //                 if (konamikeys[count] == key){
-    //                     count++;
-    //                 } else {
-    //                     // Incorrect key, restart.
-    //                     reset();
-    //                 }
-    //                 if (count == 10){
-    //                     // Success!
-    //                     alert('You have added 30 lives!');
-    //                     reset();
-    //                 }
-    //             } else {
-    //                 reset();
-    //             }
-    //         });
-    //     }
+    // function konamiCode(ab) {
+    //     var input = '';
+    //     var key = '3840384037393739666513';
+    //     document.addEventListener('keydown', function (e) {
+    //         input += ("" + e.keyCode);
+    //         if (input === key) {
+    //             return ab();
+    //         }
+    //         if (!key.indexOf(input)) return;
+    //         input = ("" + e.keyCode);
+    //     });
     // }
     //
-    // global.konami();
+    // konamiCode(function () {alert('You have added 30 lives!')})
+    var konami = konami || {};
+
+    konami.key = '3838404037393739666513';
+
+    konami.onCode = function(callback) {
+        var input = '';
+        $(document).on("keydown", function(e) {
+            input += ("" + e.keyCode);
+            if (input === konami.key) {
+                if(typeof callback == 'undefined') {
+                    return alert("You got 30 lives!");
+                }
+                else {
+                    return callback();
+                }
+            }
+            if (!konami.key.indexOf(input)) return;
+            input = ("" + e.keyCode);
+        });
+    }
+
+    konami.offCode = function() {
+        $(document).off("keydown");
+    }
+
+    konami.onCode();
+
+
+    var ryu = ryu || {};
+
+    ryu.key = '40373780';
+
+    ryu.onCode = function(callback) {
+        var input = '';
+        $(document).on("keydown", function(e) {
+            input += ("" + e.keyCode);
+            if (input === ryu.key) {
+                if(typeof callback == 'undefined') {
+                    $('.hadouken').get(0).play()
+                }
+                else {
+                    return callback();
+                }
+            }
+            if (!ryu.key.indexOf(input)) return;
+            input = ("" + e.keyCode);
+        });
+    }
+
+    ryu.offCode = function() {
+        $(document).off("keydown");
+    }
+
+    ryu.onCode();
+
+    var ryu2 = ryu2 || {};
+
+    ryu.key = '40373780';
+
+    ryu2.onCode = function(callback) {
+        var input = '';
+        $(document).on("keydown", function(e) {
+            input += ("" + e.keyCode);
+            if (input === ryu.key) {
+                if(typeof callback == 'undefined') {
+                    $('.ryuimg').toggle();
+                }
+                else {
+                    return callback();
+                }
+            }
+            if (!ryu.key.indexOf(input)) return;
+            input = ("" + e.keyCode);
+        });
+    }
+
+    ryu2.offCode = function() {
+        $(document).off("keydown");
+    }
+
+    ryu2.onCode();
+
+    var chun = chun || {};
+
+    chun.key = '757575';
+
+    chun.onCode = function(callback) {
+        var input = '';
+        $(document).on("keydown", function(e) {
+            input += ("" + e.keyCode);
+            if (input === chun.key) {
+                if(typeof callback == 'undefined') {
+                    $('.chunimg').toggle();
+                }
+                else {
+                    return callback();
+                }
+            }
+            if (!chun.key.indexOf(input)) return;
+            input = ("" + e.keyCode);
+        });
+    }
+
+    chun.offCode = function() {
+        $(document).off("keydown");
+    }
+
+    chun.onCode();
+    var chun2 = chun2 || {};
+
+    chun2.key = '757575';
+
+    chun2.onCode = function(callback) {
+        var input = '';
+        $(document).on("keydown", function(e) {
+            input += ("" + e.keyCode);
+            if (input === chun2.key) {
+                if(typeof callback == 'undefined') {
+                    $('.chun').get(0).play();
+                }
+                else {
+                    return callback();
+                }
+            }
+            if (!chun2.key.indexOf(input)) return;
+            input = ("" + e.keyCode);
+        });
+    }
+
+    chun2.offCode = function() {
+        $(document).off("keydown");
+    }
+
+    chun2.onCode();
 </script>
 </body>
 </html>
