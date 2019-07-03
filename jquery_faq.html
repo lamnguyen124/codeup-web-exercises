@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .invisible {
+        visibility: hidden;
+    }
+</style>
+<body>
+<a href="">Click</a>
+<dl>
+    <dt>Who is the director of the National Park Service?<dt>
+    <dd class="invisible">Dan Smith is the deputy director exercising the authority of director for the National Park Service.</dd>
+    <dt>What government agency oversees the National Park Service?</dt>
+    <dd class="invisible">The National Park Service is a bureau of the Department of the Interior. Directly overseeing its operation is the department's Assistant Secretary for Fish, Wildlife and Parks.</dd>
+    <dt>How old is the National Park System?</dt>
+    <dd class="invisible">The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916. Yellowstone National Park was established by an act signed by President Ulysses S. Grant on March 1, 1872, as the nation's first national park. </dd>
+    <dt>How many people visit the national parks?</dt>
+    <dd class="invisible">Total recreation visitors to the national parks in 2018: 318,211,833.</dd>
+    <dt>Can I bring my pet to a national park?</dt>
+    <dd class="invisible">Some national parks welcome pets—in developed areas, on many trails and campgrounds, and in some lodging facilities.</dd>
+    <dt>Can I bring my service dog to a national park?</dt>
+    <dd class="invisible">Yes, service dogs are legally permitted anywhere in a park that visitors can go.</dd>
+    <dt>What do I need to know about driving off road in national parks?</dt>
+    <dd class="invisible">Before you head out, check with the national parks that you intend to visit. In many national parks, off-road driving is illegal.</dd>
+    <dt>What are concessions?</dt>
+    <dd class="invisible">Concessionaires provide park visitors with lodging, transportation, food services, shops, and other services. More than 480 NPS concession contracts in more than 100 different park units vary in size from small, family-owned businesses to national/international corporations.</dd>
+    <dt>How do I find out about contracting opportunities?</dt>
+    <dd class="invisible">Opportunities to contract with the National Park Service are posted to FedBizOpps.gov, the federal government’s electronic business portal.</dd>
+    <dt>Where can I find a park map?</dt>
+    <dd class="invisible">You can view maps on specific park websites or download maps from the Harpers Ferry Center map collection.</dd>
+</dl>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $('a').click(function(event){
+        event.preventDefault();
+        $('dd').toggleClass('invisible')
+    });
+</script>
+</body>
+</html>
