@@ -33,11 +33,71 @@
     <dt>Where can I find a park map?</dt>
     <dd class="invisible">You can view maps on specific park websites or download maps from the Harpers Ferry Center map collection.</dd>
 </dl>
+<button>Click</button>
+    <h3>Grand Canyon</h3>
+    <ul>
+        <li>
+            covers 1,217,262 acres
+        </li>
+        <li>
+            located in northwestern Arizona,
+        </li>
+        <li>
+            celebrated is 100th anniversary on February 26, 2019.
+        </li>
+        <li>
+            15th site in the United States to have been named a national park
+        </li>
+    </ul>
+    <h3>Badlands National Park</h3>
+        <ul>
+            <li>
+                protects 242,756 acres.
+            </li>
+            <li>
+                located in southwestern South Dakota.
+            </li>
+            <li>
+                where the black-footed ferret, one of the most endangered mammals in the world, was reintroduced to the wild.
+            </li>
+            <li>
+                Movies such as Dances with Wolves (1990) and Thunderheart (1992) were partially filmed.
+            </li>
+        </ul>
+    <h3>Cuyahoga Valley</h3>
+        <ul>
+            <li>
+                covers 32,572-acres.
+            </li>
+            <li>
+                preserves and reclaims the rural landscape along the Cuyahoga River between Akron and Cleveland in Northeast Ohio.
+            </li>
+            <li>
+                has a Humid Continental Mild Summer, Wet All Year (‘’Dfb’’)
+            </li>
+            <li>
+                features natural, man-made, and private attractions, which is unusual for an American national park.
+            </li>
+        </ul>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
+    $(document).ready(function(){
     $('a').click(function(event){
         event.preventDefault();
         $('dd').toggleClass('invisible')
+        });
+    });
+
+        $('button').click(function(){
+            $('ul').each(function() {
+                $(this).children().last().css('background-color', 'yellow');
+            })
+        });
+    $("h3").click(function() {
+            $(this).next().css('font-weight', 'bold');
+    });
+    $("li").click(function() {
+            $(this).parent().children().first().css('color', 'blue');
     });
 </script>
 </body>

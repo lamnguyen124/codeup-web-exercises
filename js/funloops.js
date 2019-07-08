@@ -1,30 +1,30 @@
 <html>
 <head>
-<title>FunLoops</title>
+    <title>FunLoops</title>
 </head>
 <body>
 <h1>We are learning about looping</h1>
 <script>
-"use strict";
+    "use strict";
 
-(function(){
+    (function(){
     // 21 game
     var keepGoing = true;
     function hitMe(){
-        var nextCard = Math.floor((Math.random()*11)+1);
-        ourHand += nextCard;
-    }
+    var nextCard = Math.floor((Math.random()*11)+1);
+    ourHand += nextCard;
+}
     do {
-        hitMe();
-        alert("Your hand is now " + ourHand);
-        if (ourHand > 21) {
-            keepGoing = false;
-            alert("You busted!");
-        }
-        if (keepGoing) {
-            keepGoing =	confirm("Do you want another card?");
-        }
-    } while(keepGoing);
+    hitMe();
+    alert("Your hand is now " + ourHand);
+    if (ourHand > 21) {
+    keepGoing = false;
+    alert("You busted!");
+}
+    if (keepGoing) {
+    keepGoing =    confirm("Do you want another card?");
+}
+} while(keepGoing);
     // for loop version
     // for (var ourHand = 0;ourHand <= 21;
     // 	ourHand += Math.floor((Math.random()*11)+1))
@@ -57,14 +57,14 @@
 
     var count = 0;
     while (count <10 ) {
-        console.log("Count is now " + count);
-        count++;
-    }
+    console.log("Count is now " + count);
+    count++;
+}
     console.log("Done with while loop")
     for (var count = 0; count <= 10; count+=2)	// after each iteration
-    {
-        console.log("Count is now " + count);
-    }
+{
+    console.log("Count is now " + count);
+}
     console.log("Done with for loop")
 
 
