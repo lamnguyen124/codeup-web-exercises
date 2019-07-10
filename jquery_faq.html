@@ -10,6 +10,8 @@
     }
 </style>
 <body>
+<div><h1>Would you like to sign up for our newsletter?<span>x</span></h1></div>
+<div><h2>Would you like register for the site?</h2></div>
 <a href="">Click</a>
 <dl>
     <dt>Who is the director of the National Park Service?<dt>
@@ -99,6 +101,15 @@
     $("li").click(function() {
             $(this).parent().children().first().css('color', 'blue');
     });
+    $('span').click(function() {
+        $('div').hide();
+    });
+    $('h3').next().hide();
+    $("h3").click(function() {
+        $(this).next().slideToggle();
+    });
+    $('h2').hide();
+    $('h2').delay(8000).fadeToggle();
 </script>
 </body>
 </html>
