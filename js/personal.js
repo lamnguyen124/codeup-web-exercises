@@ -1,0 +1,10 @@
+$('.content').hide();
+$('.content').delay(1000).slideToggle();
+$('.navbar').hide();
+$('.navbar').delay(1000).slideToggle();
+$('.navbar-brand').hide();
+$('.navbar-brand').delay(2000).slideToggle();
+$('.myname').hide();
+$('.myname').delay(2200).fadeToggle();
+$('.title').hide();
+$('.title').delay(2600).fadeToggle();

@@ -1,0 +1,46 @@
+#myVideo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translate(-50%, -50%);
+}
+
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, .5);
+    color: white;
+    width: 100%;
+    padding: 20px;
+}
+.navbar{
+    background-color: #e3f2fd;
+    /*background-image: url('../img/cloud.jpg');*/
+    background-size: cover;
+    color: white !important;
+}
+.myname{
+    color: white;
+    font-size: 80px;
+    text-align: center;
+}
+.blank{
+    height: 250px;
+}
+.title{
+    color: white;
+    font-size: 40px;
+    text-align: center;
+}
+.logo{
+    height: 60%;
+    width: 60%;
+}
+.nav{
+    background-image: url("img/cloud.jpg") !important;
+}
