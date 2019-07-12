@@ -61,12 +61,11 @@
 <script>
     (function() {
         "use strict";
-        $.ajax('./data/blog.json');
-        $.ajax("./data/blog.json").done(function(responseData){
-            console.log(responseData);
-        });
+        // $.get("./data/blog.json").done(function(responseData){
+        //     console.log(responseData);
+        // });
         function updatePage() {
-            var request = $.ajax('./data/blog.json');
+            var request = $.get('./data/blog.json');
             request.done(function(data) {
                 var html = buildHTML(data);
                 $('#blog').html(html);
