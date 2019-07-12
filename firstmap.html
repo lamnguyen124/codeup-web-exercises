@@ -27,9 +27,10 @@
 
 <!-- Custom JS -->
 <script>
-    mapboxgl.accessToken = mapboxToken;
+    var accessToken = mapboxToken;
+    mapboxgl.accessToken = accessToken;
     var options = {
-        container: 'target',
+        container: '#target',
         style: 'mapbox://styles/mapbox/streets-v9',
         zoom: 12,
         center: [-98.4916, 29.4252]

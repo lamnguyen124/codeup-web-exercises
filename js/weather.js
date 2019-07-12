@@ -19,26 +19,38 @@ function updatePage() {
 
 updatePage();
 
+var icon;
 function buildHTML(weathers) {
     console.log("in build function");
     console.log(weathers);
+    function weatherIcons() {
+        imageArray.forEach(function (ele) {
+            if (weathers[0].icon === ele.icon) {
+                icon = ele.src;
+            } else if (weathers[1].icon === ele.icon) {
+                icon = ele.src;
+            } else if (weathers[2].icon === ele.icon) {
+                icon = ele.src;
+        }})
+    }
+    weatherIcons();
     var weathersHTML = "";
     weathersHTML += '<tr>' + '<td>' + weathers[0].apparentTemperatureMax + '<br>';
-    weathersHTML +=  weathers[0].icon + '<br>';
+    weathersHTML +=  '<img src="'+icon+'" alt="">' + '<br>';
     weathersHTML +=  'Clouds:' + weathers[0].summary + '<br>';
     weathersHTML +=  'Humidity:' +  weathers[0].humidity + '<br>';
     weathersHTML +=  'Wind:' + weathers[0].windSpeed + '<br>';
     weathersHTML +=  'Pressure:' + weathers[0].pressure + '</td>';
 
     weathersHTML +=  '<td>' + weathers[1].apparentTemperatureMax + '<br>';
-    weathersHTML +=  weathers[0].icon  + '<br>';
+    weathersHTML +=  '<img src="'+icon+'" alt="">' + '<br>';
     weathersHTML +=  'Clouds:' + weathers[1].summary  + '<br>';
     weathersHTML +=  'Humidity:' +  weathers[1].humidity  + '<br>';
     weathersHTML +=  'Wind:' + weathers[1].windSpeed  + '<br>';
     weathersHTML +=  'Pressure:' + weathers[1].pressure + '</td>';
 
     weathersHTML +=   '<td>' + weathers[2].apparentTemperatureMax + '<br>';
-    weathersHTML +=   weathers[0].icon + '<br>';
+    weathersHTML +=   '<img src="'+icon+'" alt="">' + '<br>';
     weathersHTML +=   'Clouds:' + weathers[2].summary + '<br>';
     weathersHTML +=   'Humidity:' +  weathers[2].humidity + '<br>';
     weathersHTML +=   'Wind:' + weathers[2].windSpeed + '<br>';
@@ -86,16 +98,54 @@ var imageArray = [
          "icon": "partly-cloudy-night"
     }
 ];
+var accessToken = mapboxToken;
+mapboxgl.accessToken = accessToken;
 
-function weatherIcons() {
-    var
-        if (weather[0].icon === imageArray.icon);
+// var sanAntonio;
+// var mapOptions = {
+//     container: 'map',
+//     style: 'mapbox://styles/mapbox/outdoors-v10',
+//     zoom: 15,
+//     center: [-98.489313, 29.426409]
+// };
+// var coordinates = document.getElementById('coordinates');
+// var map = new mapboxgl.Map(mapOptions);
+//
+// var marker = new mapboxgl.Marker({
+//     draggable: true
+// })
+//     .setLngLat([-98.489313, 29.426409])
+//     .addTo(map);
+//
+// function onDragEnd() {
+//     var lngLat = marker.getLngLat();
+//     coordinates.style.display = 'block';
+//     coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+// }
+//
+// marker.on('dragend', onDragEnd);
 
+var coordinates = document.getElementById('coordinates');
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [-98.489313, 29.426409],
+    zoom: 8
+});
 
+var marker = new mapboxgl.Marker({
+    draggable: true
+})
+    .setLngLat([-98.489313, 29.426409])
+    .addTo(map);
+
+function onDragEnd() {
+    var lngLat = marker.getLngLat();
+    coordinates.style.display = 'block';
+    coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
 }
 
-
-
+marker.on('dragend', onDragEnd);
 
 
 

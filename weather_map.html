@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Map</title>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        #map {
+            width: 80%;
+            height: 500px;
+        }
+    </style>
 </head>
 <body>
 <table id="weather"></table>
+<div id="map"></div>
+<pre id='coordinates' class='coordinates'></pre>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 <script src="js/keys.js"></script>
 <script src="js/weather.js"></script>
-
+<script src="js/mapbox-geocoder-utils.js"></script>
 </body>
 </html>
