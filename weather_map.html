@@ -3,20 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Map</title>
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.css' type='text/css' />
     <style>
+        #myVideo {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            transform: translate(-50%, -50%);
+        }
         #map {
-            width: 80%;
+            width: 100%;
             height: 500px;
+        }
+        #weather {
+            background-color: rgba(74, 164, 255, .9);
+            width: 100%;
+            text-align: center;
+        }
+        table {
+            width: 100%
         }
     </style>
 </head>
 <body>
-<table id="weather"></table>
-<div id="map"></div>
-<pre id='coordinates' class='coordinates'></pre>
+<video autoplay id="myVideo" loop muted>
+<source src="img/sky.mp4" type="video/mp4">
+</video>
+<div class="row">
+<div class="column col-2"></div>
+<div class="column col-8">
+    <table id="weather"></table>
+    <div id="map"></div>
+    <pre id='coordinates' class='coordinates'></pre>
+</div>
+<div class="column col-2"></div>
+</div>
+
+<script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'></script>
 <script src="js/keys.js"></script>
 <script src="js/weather.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
