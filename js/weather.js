@@ -128,18 +128,23 @@ function onDragEnd() {
 
 marker.on('dragend', onDragEnd);
 
-// var geocoder = new MapboxGeocoder({ // Initialize the geocoder
-//     accessToken: mapboxgl.accessToken, // Set the access token
-//     mapboxgl: mapboxgl, // Set the mapbox-gl instance
-//     marker: false // Do not use the default marker style
-// });
-//
-// geocoder.on('result', function(ev) {// change the result to san antonio texas to hard code in start point// re do the geocoder.on to repopulate searched results
-//     map.getSource('single-point').setData(ev.result.geometry);
-//     var geoLat =  ev.result.geometry.coordinates[1];
-//     var geoLong = ev.result.geometry.coordinates[0];
-//     console.log(geoLat, geoLong);
-//
+var geocoder = new MapboxGeocoder({ // Initialize the geocoder
+    accessToken: mapboxgl.accessToken, // Set the access token
+    mapboxgl: mapboxgl, // Set the mapbox-gl instance
+    // marker: false // Do not use the default marker style
+});
+
+geocoder.on('result', function(ev) {// change the result to san antonio texas to hard code in start point// re do the geocoder.on to repopulate searched results
+    var geoLat = ev.result.geometry.coordinates[1];
+    var geoLong = ev.result.geometry.coordinates[0];
+    console.log(geoLat, geoLong);
+    $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + geoLat +',' + geoLong).done(function(data) {
+        var html = buildHTML(data.daily.data);
+        $('#weather').html(html);}).fail(function(jqXhr, status, error) {
+        console.log("Something went wrong");
+        console.log(status);
+    });
+});
 //     var marker = new mapboxgl.Marker() // Initialize a new marker
 //         .setLngLat([geoLong, geoLat]) // Marker [lng, lat] coordinates
 //         .addTo(map); // Add the marker to the map
