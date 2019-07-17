@@ -37,16 +37,19 @@ const users = [
 ];
 
 const threeLanguages = users.filter(user => user.languages.length >= 3);
+console.log(threeLanguages);
 
 const email = users.map(user => user.email);
+console.log(email);
 
-const totalYears = users.reduce(function(accumulation, current){
-    return accumulation + current.yearsOfExperience;
-},0);
+const totalYears = users.reduce((total, user) => total + user.yearsOfExperience,0);
 
-console.log(totalYears/users.length);
+const averageYears= totalYears/users.length;
+console.log (averageYears);
 
 const longestEmail = users.reduce((previous, current) => {
+    //this const stores the email property of object we are currently
+    //iterating over
     const currentEmail = current.email;
     if(currentEmail.length > previous.length) {
         return currentEmail;
@@ -57,8 +60,20 @@ const longestEmail = users.reduce((previous, current) => {
 
 console.log(longestEmail);
 
-const userNames = users.reduce(function(previous, current){
-    return previous.concat(current);
-},0);
+const yourInstructor = users.reduce(function(sentence, instructor,index,arr){
+    if(index === (arr.length -1)){
+        return `${sentence}${instructor.name},`;
+}else{
+    return `${sentence}${instructor.name},`;
+}
+},"Your instructors are: ");
 
-console.log(userNames);
+const uniqueLanguages = users.reduce(function(prev,current){
+    const langs = current.languages;
+    for(const lang of langs){
+        prev.add(lang);
+    }
+    return prev;
+},new Set);
+
+console.log (uniqueLanguages);
