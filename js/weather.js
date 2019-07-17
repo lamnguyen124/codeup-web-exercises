@@ -134,7 +134,7 @@ var geocoder = new MapboxGeocoder({ // Initialize the geocoder
     // marker: false // Do not use the default marker style
 });
 
-geocoder.on('result', function(ev) {// change the result to san antonio texas to hard code in start point// re do the geocoder.on to repopulate searched results
+geocoder.on('result', function(ev) {
     var geoLat = ev.result.geometry.coordinates[1];
     var geoLong = ev.result.geometry.coordinates[0];
     console.log(geoLat, geoLong);
